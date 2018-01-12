@@ -22,7 +22,11 @@ libraryDependencies ++= Seq(
   "org.iq80.leveldb"            % "leveldb"          % "0.9" ,
   "org.fusesource.leveldbjni"   % "leveldbjni-all"   % "1.8",
   "com.typesafe.akka" %% "akka-remote" % "2.5.8",
-  "com.typesafe" % "config" % "1.3.2"
+  "com.typesafe" % "config" % "1.3.2",
+  "com.typesafe.akka" %% "akka-cluster" % "2.5.5",
+  "com.typesafe.akka" %% "akka-cluster-tools" % "2.5.5",
+  "com.typesafe.akka" %% "akka-stream" % "2.5.8",
+  "com.typesafe.akka" %% "akka-stream-testkit" % "2.5.8" % Test
 )
 
 // META-INF discarding

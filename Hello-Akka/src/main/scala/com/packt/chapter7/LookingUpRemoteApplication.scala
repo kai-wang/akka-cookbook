@@ -10,8 +10,7 @@ import scala.util.{Failure, Success}
   * Created by d771266 on 9/01/2018.
   */
 object LookingUpActorSelection extends App{
-  val config: Config = ConfigFactory.load("application-1.conf")
-  val actorsystem = ActorSystem("LookupingUpActors", config)
+  val actorsystem = ActorSystem("LookupingUpActors")
   implicit val dispatcher = actorsystem.dispatcher
 
   val selection = actorsystem.actorSelection("akka.tcp//LookingUpRemoteActors@127.0.0.1:2553/user/remoteActor")
@@ -26,7 +25,6 @@ object LookingUpActorSelection extends App{
 }
 
 object LookingUpRemoteActors extends App {
-  val config: Config = ConfigFactory.load("application-3.conf")
-  val actorSystem = ActorSystem("LookingUpRemoteActors", config)
+  val actorSystem = ActorSystem("LookingUpRemoteActors")
   actorSystem.actorOf(Props[SimpleActor], "remoteActor")
 }
